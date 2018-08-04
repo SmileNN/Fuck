@@ -151,46 +151,32 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://www.windows7en.com/uploads/140829/2014032014095315.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://visualstudio.microsoft.com/wp-content/uploads/2016/05/C-4-562x309-OPx.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >后台开发学习实录</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="后台开发学习实录"><a href="#后台开发学习实录" class="headerlink" title="后台开发学习实录"></a>后台开发学习实录</h1><p>标签：学习</p>
-<h2 id="学习书籍目录"><a href="#学习书籍目录" class="headerlink" title="学习书籍目录"></a>学习书籍目录</h2><ul>
-<li style="list-style: none"><input type="checkbox"> <strong>语言部分</strong><ul>
-<li style="list-style: none"><input type="checkbox"> C++primer</li>
-<li style="list-style: none"><input type="checkbox"> C++STL(参考书目)</li>
-<li style="list-style: none"><input type="checkbox"> 深度探索C++对象模型</li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> <strong>系统部分</strong><ul>
-<li style="list-style: none"><input type="checkbox"> Unix环境高级编程</li>
-<li style="list-style: none"><input type="checkbox"> Unix网络编程卷1</li>
-<li style="list-style: none"><input type="checkbox"> 深入理解计算机系统</li>
-<li style="list-style: none"><input type="checkbox"> TCP IP详解卷1协议<br>学习计划日程</li>
-</ul>
-</li>
-</ul>
+                <h1 id="深度探索C-对象模型"><a href="#深度探索C-对象模型" class="headerlink" title="深度探索C++对象模型"></a>深度探索C++对象模型</h1><p>标签 ： C++</p>
 <hr>
-<p><code>每天晚上进行总结</code></p>
-<table>
-<thead>
-<tr>
-<th>时间</th>
-<th>学习内容</th>
-<th>效果</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>学习收获：</p>
-<p><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="noopener">语法手册</a></p>
+<h2 id="chapter1-关于对象"><a href="#chapter1-关于对象" class="headerlink" title="chapter1. 关于对象"></a>chapter1. 关于对象</h2><p>###c++对象模型<br>  可能在布局上引起额外负担的操作由<strong>virtual</strong>引起包括：<br>  <code>virtual function</code><br>  <code>virtual base class</code></p>
+<ul>
+<li><p>简单对象模型<br>feature：低效、空间复杂度高、降低编译器设计复杂度</p>
+<p>每一个成员对应一个指针，成员本身不存在object中，object中存放的是pointers。</p>
+<p><strong>被应用于“指向成员的指针”概念</strong></p>
+</li>
+</ul>
+<ul>
+<li><p>表格驱动对象模型<br>成员信息分放在data member table 和member function table中，class object本身存放指向两个表格的指针</p>
+<p><strong>被应用于虚函数表</strong></p>
+</li>
+</ul>
+<ul>
+<li><p>C++对象模型<br>非静态数据成员放在每一个class object中，静态数据成员放在class之外<br>静态与非静态函数成员都放在class object之外</p>
+<p>虚函数支持的步骤：<br>1.每一个class产生一堆指向virtual            functions的指针，放在表格中，即virtual      table<br>2.每一个class         object被添加一个指针，指向相关的virtual table，指针被称为vptr，vptr由构造函数、复制构造函数设定重置，每一个class关联的type_info object（支持RTTI使用）也由vb指出，放在表格的第一个slot中</p>
+</li>
+</ul>
+<p>  优缺点：空间和存取效率高，仅仅修改非静态数据成员也要重新编译</p>
+<p>  C++内存布局是按照块内声明顺序进行内存排列，块之间顺序是不确定的</p>
 
             </div>
 

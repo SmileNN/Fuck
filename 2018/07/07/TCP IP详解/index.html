@@ -151,46 +151,100 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://www.windows7en.com/uploads/140829/2014032014095315.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://pic.baike.soso.com/p/20101009/20101009104201-1413165860.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >后台开发学习实录</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="后台开发学习实录"><a href="#后台开发学习实录" class="headerlink" title="后台开发学习实录"></a>后台开发学习实录</h1><p>标签：学习</p>
-<h2 id="学习书籍目录"><a href="#学习书籍目录" class="headerlink" title="学习书籍目录"></a>学习书籍目录</h2><ul>
-<li style="list-style: none"><input type="checkbox"> <strong>语言部分</strong><ul>
-<li style="list-style: none"><input type="checkbox"> C++primer</li>
-<li style="list-style: none"><input type="checkbox"> C++STL(参考书目)</li>
-<li style="list-style: none"><input type="checkbox"> 深度探索C++对象模型</li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> <strong>系统部分</strong><ul>
-<li style="list-style: none"><input type="checkbox"> Unix环境高级编程</li>
-<li style="list-style: none"><input type="checkbox"> Unix网络编程卷1</li>
-<li style="list-style: none"><input type="checkbox"> 深入理解计算机系统</li>
-<li style="list-style: none"><input type="checkbox"> TCP IP详解卷1协议<br>学习计划日程</li>
-</ul>
-</li>
-</ul>
+                <h1 id="TCP-IP详解"><a href="#TCP-IP详解" class="headerlink" title="TCP IP详解"></a>TCP IP详解</h1><p>标签： 网络</p>
 <hr>
-<p><code>每天晚上进行总结</code></p>
+<h2 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a>第一章 概述</h2><p>1.现代网络结构设计：</p>
+<blockquote>
+<ul>
+<li>分层</li>
+<li>复用、分解、封装</li>
+</ul>
+</blockquote>
+<p>2.端口号<br>每个IP有65536个端口号</p>
+<p>熟知端口号：</p>
 <table>
 <thead>
 <tr>
-<th>时间</th>
-<th>学习内容</th>
-<th>效果</th>
-<th>备注</th>
+<th>协议</th>
+<th style="text-align:center">端口号</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td>SSH 安全外壳协议</td>
+<td style="text-align:center">22</td>
+</tr>
+<tr>
+<td>FTP</td>
+<td style="text-align:center">20/21</td>
+</tr>
+<tr>
+<td>Telnet远程终端协议</td>
+<td style="text-align:center">23</td>
+</tr>
+<tr>
+<td>电子邮件SMTP</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td>DNS</td>
+<td style="text-align:center">53</td>
+</tr>
+<tr>
+<td>HTTP/HTTPS</td>
+<td style="text-align:center">80/443</td>
+</tr>
+<tr>
+<td>IMAP/IMAPS</td>
+<td style="text-align:center">143/993</td>
+</tr>
+<tr>
+<td>SNMP</td>
+<td style="text-align:center">161/162</td>
 </tr>
 </tbody>
 </table>
-<p>学习收获：</p>
-<p><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="noopener">语法手册</a></p>
+<p>3.网络结构</p>
+<blockquote>
+<ul>
+<li>客户机/服务器模式</li>
+<li>对等模式</li>
+</ul>
+</blockquote>
+<p>编程接口：套接字</p>
+<h2 id="第二章-Internet地址结构"><a href="#第二章-Internet地址结构" class="headerlink" title="第二章 Internet地址结构"></a>第二章 Internet地址结构</h2><p> 1.分类寻址<br> |类|地址范围|高序位|用途|百分比|网络数|主机数|<br> |–|——–|—|—-|–|—|—-|<br> |A|0.0.0.0~127.255.255.255|0|单播/特殊|1/2|128|16 777 216|<br> |B|128.0.0.0~191.255.255.255|10|单播/特殊|1/4|16 384|65 536|<br> |C|192.0.0.0~223.255.255.255|110|单播/特殊|1/8|2 097 152|256|<br> |D|224.0.0.0~239.255.255.255|1110|组播|1/16|N/A|N/A|<br> |E|240.0.0.0~255.255.255.255|1111|保留|1/16|N/A|N/A|</p>
+<blockquote>
+<p> 地址块的第一个和最后一个地址通常不使用</p>
+</blockquote>
+<p> 2.子网掩码<br> 255.255.255.255被保留用于本地广播，不经路由器</p>
+<p> 3.CIDR和聚合<br> 使用聚合以减少路由表的规模</p>
+<p> 4.IPv4/IPv6地址转换</p>
+<p> 5.组播地址<br> 单机发送组播时，使用单播IP作为源地址，组播IP作为目的地址</p>
+<h2 id="第三章-链路层"><a href="#第三章-链路层" class="headerlink" title="第三章 链路层"></a>第三章 链路层</h2><p>1.以太网和IEEE802局域网/城域网标准<br>CSMA/CD带冲突检测的载波侦听多路访问</p>
+<p> 2.链路层流量控制<br> 发送方发送特殊信号帧<br> PAUSE消息</p>
+<p> 3.网桥和交换机</p>
+<p> 4.生成树协议</p>
+<blockquote>
+<ul>
+<li>选举根网桥</li>
+<li>处理拓扑变化</li>
+</ul>
+</blockquote>
+<h2 id="第四章-地址解析协议"><a href="#第四章-地址解析协议" class="headerlink" title="第四章 地址解析协议"></a>第四章 地址解析协议</h2><p> 1.ARP在正常模式下，仅适用于广播网络<br> 在一个共享的链路层网段上，ARP向所有主机发送一个称为ARP请求的以太网帧，这是链路层广播</p>
+<p> 2.ARP缓存，维护每个接口从网络层到硬件地址的最新映射<br> 完整条目超时20min，不完整超时3min<br> 即超时时间内未更新而丢弃，成为软状态。</p>
+<p> 代理ARP（通常是路由器）</p>
+<p> 命令arp -a</p>
+<blockquote>
+<ul>
+<li>使用静态条目可以防止攻击</li>
+</ul>
+</blockquote>
+<h2 id="第五章-Internet协议"><a href="#第五章-Internet协议" class="headerlink" title="第五章 Internet协议"></a>第五章 Internet协议</h2><p>1.IPv4头部20字节（除非有选项），IPv6头部固定40字节<br>2.32位的4字节使用高位优先传输，即网络字节序，cpu使用地位优先字节序，传输时需要2次转换。<br>3.IPv4支持分片，IPv6不支持<br>4.移动IP<br>一台主机拥有一个家乡网络<br>家乡内部使用普通转发<br>在外部时使用代理路由器，”家乡代理“为移动节点提供路由。</p>
 
             </div>
 
