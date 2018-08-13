@@ -151,32 +151,20 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://visualstudio.microsoft.com/wp-content/uploads/2016/05/C-4-562x309-OPx.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >深度探索C++对象模型</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://www.ospcon.ru/files/uploads/image/%D0%9C%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5%20%D0%9A%D0%A0%D0%9E%D0%9A-17_02_2010/VMware_grey_logo.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >VM常见问题</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="深度探索C-对象模型"><a href="#深度探索C-对象模型" class="headerlink" title="深度探索C++对象模型"></a>深度探索C++对象模型</h1><p>标签 ： C++</p>
+                <h1 id="VMware各种问题解决方法汇总"><a href="#VMware各种问题解决方法汇总" class="headerlink" title="VMware各种问题解决方法汇总"></a>VMware各种问题解决方法汇总</h1><p>标签： VMware</p>
 <hr>
-<h2 id="chapter1-关于对象"><a href="#chapter1-关于对象" class="headerlink" title="chapter1. 关于对象"></a>chapter1. 关于对象</h2><h2 id="c-对象模型"><a href="#c-对象模型" class="headerlink" title="c++对象模型"></a>c++对象模型</h2><p>  可能在布局上引起额外负担的操作由<strong>virtual</strong>引起包括：<br>  <code>virtual function</code><br>  <code>virtual base class</code></p>
+<p>配置网络之后可能连不上网，连接时提示</p>
+<blockquote>
 <ul>
-<li><p>简单对象模型<br>feature：低效、空间复杂度高、降低编译器设计复杂度</p>
-<p>每一个成员对应一个指针，成员本身不存在object中，object中存放的是pointers。</p>
-<p><strong>被应用于“指向成员的指针”概念</strong></p>
-</li>
+<li>无法将 Ethernet0 连接到虚拟网络”VMnet0″ 详细信息可以在 vmware.log 文件中找到未能连接虚拟机Ethernet0<br>按照网上的修改主机WLAN，配置虚拟机网络都不行，需要如下操作：</li>
+<li>打开虚拟机，编辑&gt;虚拟机网络配置，然后恢复默认设置<br>OK！</li>
 </ul>
-<ul>
-<li><p>表格驱动对象模型<br>成员信息分放在data member table 和member function table中，class object本身存放指向两个表格的指针</p>
-<p><strong>被应用于虚函数表</strong></p>
-</li>
-</ul>
-<ul>
-<li><p>C++对象模型<br>非静态数据成员放在每一个class object中，静态数据成员放在class之外<br>静态与非静态函数成员都放在class object之外</p>
-<p>虚函数支持的步骤：<br>1.每一个class产生一堆指向virtual            functions的指针，放在表格中，即virtual      table<br>2.每一个class         object被添加一个指针，指向相关的virtual table，指针被称为vptr，vptr由构造函数、复制构造函数设定重置，每一个class关联的type_info object（支持RTTI使用）也由vb指出，放在表格的第一个slot中</p>
-</li>
-</ul>
-<p>  优缺点：空间和存取效率高，仅仅修改非静态数据成员也要重新编译</p>
-<p>  C++内存布局是按照块内声明顺序进行内存排列，块之间顺序是不确定的</p>
+</blockquote>
 
             </div>
 

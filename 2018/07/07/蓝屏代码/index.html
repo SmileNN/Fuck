@@ -151,32 +151,20 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://visualstudio.microsoft.com/wp-content/uploads/2016/05/C-4-562x309-OPx.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >深度探索C++对象模型</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://zdnet1.cbsistatic.com/hub/i/r/2017/06/06/13369703-226c-4572-84a5-1997803adbd6/resize/1170x878/e53188e9fde266c452ab77d2de87ea48/windows10tiprepair-1.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Win10常见问题解决</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="深度探索C-对象模型"><a href="#深度探索C-对象模型" class="headerlink" title="深度探索C++对象模型"></a>深度探索C++对象模型</h1><p>标签 ： C++</p>
+                <p>Win 10常见问题解决</p>
+<p>标签： win10</p>
 <hr>
-<h2 id="chapter1-关于对象"><a href="#chapter1-关于对象" class="headerlink" title="chapter1. 关于对象"></a>chapter1. 关于对象</h2><h2 id="c-对象模型"><a href="#c-对象模型" class="headerlink" title="c++对象模型"></a>c++对象模型</h2><p>  可能在布局上引起额外负担的操作由<strong>virtual</strong>引起包括：<br>  <code>virtual function</code><br>  <code>virtual base class</code></p>
-<ul>
-<li><p>简单对象模型<br>feature：低效、空间复杂度高、降低编译器设计复杂度</p>
-<p>每一个成员对应一个指针，成员本身不存在object中，object中存放的是pointers。</p>
-<p><strong>被应用于“指向成员的指针”概念</strong></p>
-</li>
-</ul>
-<ul>
-<li><p>表格驱动对象模型<br>成员信息分放在data member table 和member function table中，class object本身存放指向两个表格的指针</p>
-<p><strong>被应用于虚函数表</strong></p>
-</li>
-</ul>
-<ul>
-<li><p>C++对象模型<br>非静态数据成员放在每一个class object中，静态数据成员放在class之外<br>静态与非静态函数成员都放在class object之外</p>
-<p>虚函数支持的步骤：<br>1.每一个class产生一堆指向virtual            functions的指针，放在表格中，即virtual      table<br>2.每一个class         object被添加一个指针，指向相关的virtual table，指针被称为vptr，vptr由构造函数、复制构造函数设定重置，每一个class关联的type_info object（支持RTTI使用）也由vb指出，放在表格的第一个slot中</p>
-</li>
-</ul>
-<p>  优缺点：空间和存取效率高，仅仅修改非静态数据成员也要重新编译</p>
-<p>  C++内存布局是按照块内声明顺序进行内存排列，块之间顺序是不确定的</p>
+<h1 id="蓝屏代码"><a href="#蓝屏代码" class="headerlink" title="蓝屏代码"></a>蓝屏代码</h1><p>问题：<br>win10作为windows的最终版本OS，个人很喜欢它的风格，metro开始界面，令人舒适的布局设计，以及不断加入的新功能。但是windows10跟所有的Windows一样都有蓝屏这个让人恶心的设定，蓝屏不是bug是feature（滑稽），当我们看到蓝屏代码的时候往往是一脸懵逼的，这是什么？这段莫名其妙的英文是啥意思？今天我就以个人经历讲一讲这个蓝屏代码以及解决方法。<br>回答：<br>1.首先蓝屏是为了保护用户的数据，这个一定要搞清楚。比如你的电脑过热、内存出了bug、驱动出了问题都可能导致蓝屏。而这些很可能是第三方的锅（emmmm甩锅需谨慎啊！巨硬不做背锅侠），这个时候系统会觉得你的电脑存在丢失数据的风险，比如过热cpu可能罢工，内存可能出现混乱等等会把尚未写入磁盘的数据丢失，还有驱动程序或者其他第三方软件出现问题，这个时候Windows无法预知继续运行会出现什么问题，最好的办法是蓝屏，终止用户的操作，然后显示蓝屏代码，数据存盘，然后内存写入<strong>.dump文件</strong>。这时候你只能静静等待重启了。<br>2.上一条提到的.dump文件是我们解决问题的关键所在，这里边记录了蓝屏之前我们系统的运行日志，包括什么驱动，什么软件在运行，导致蓝屏的内存地址等等，可以定位到是哪个程序在搞鬼，就可以把他揪出来啦（ahhhhhh！）<br>3.dump文件记事本什么的是打不开的，这时你就要一个工具啦！<a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/windbg-install-preview" target="_blank" rel="noopener">WinDbg</a><br>操作步骤在微软社区都很全面<br>进去之后素质三连</p>
+<blockquote>
+<p>1.Ctrl+S粘贴<code>srv*c:\mss*http://msdl.microsoft.com/download/symbols</code>加载符号<br>2.file&gt;open crash dump 选择dump文件<br>3.想打开得先知道在哪吧！<code>C:\WINDOWS\Minidump</code>就是这儿，蓝屏后重启就有个文件</p>
+</blockquote>
+<p>打开之后使用!analyze -v命令分析引起崩溃的程序</p>
+<p>参考：<a href="http://www.xitonghe.com/jiaocheng/Windows10-7435.html" target="_blank" rel="noopener">dump文件分析</a></p>
 
             </div>
 
