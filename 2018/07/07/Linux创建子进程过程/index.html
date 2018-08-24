@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/fuck1.png"/>
+	<link rel="shortcut icon" href="/img/fuck1.png">
+	
+			    <title>
+    This is doublejian
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="C++ Python MachineLearning 程序员 后台开发" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">GO</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">学习</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Windows-10/">Windows 10</a></li><li><a class="category-link" href="/categories/后台开发/">后台开发</a></li><li><a class="category-link" href="/categories/网络/">网络</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="照片">
+		                照片
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="游戏">
+		                游戏
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="其他">
+		                其他
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://pic21.nipic.com/20120527/2786001_183253936000_2.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >子进程创建</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="Linux创建子进程过程"><a href="#Linux创建子进程过程" class="headerlink" title="Linux创建子进程过程"></a>Linux创建子进程过程</h1><p>标签（空格分隔）： Linux 进程</p>
+<hr>
+<p>内核启动生成0号进程，0号进程再创建1号进程与2号进程，1号是所有用户态进程祖先，2号是内核态进程祖先。<br>PCB是描述一个进程的数据块。在内核中对应task_struct代码。而子进程的PCB是复制并修改父进程的PCB得来的。<br>创建一个进程可以通过clone(),fork(),vfork()这三个系统调用来完成。而这三个系统调用都是由do_fork()函数来负责处理。实现clone()系统调用的是sys_clone()服务例程，实现fork()系统调用的是clone()，实现vfork()的也是clone()。但是负责处理clone(),fork()和vfork()的函数是do_fork()。概括的流程就是：clone(),fork(),vfork()——&gt;sys_clone()——&gt;do_fork()。</p>
+<p>分析fork()函数<br>1、通过查找pidmap_array位图，为子进程分配新的PID<br>2、检查父进程的ptrace字段(current-&gt;ptrace)<br>3、调用copy_process()复制进程描述符<br>4-8、根据CLONE_STOPPED标志的值做一些处理<br>9、结束并返回子进程的PID</p>
+<p>do_fork(）函数的关键是调用copy_process()函数。copy_process()函数的作用是创建进程描述符以及子进程执行所需要的所有其他数据结构。在copy_process()函数中，比较关键的是调用dup_task_struct()为子进程获取进程描述符；调用copy_thread()用发出clone()系统调用时CPU寄存器保存的值来初始化子进程的内核栈；调用sched_fork()完成对新进程调度程序数据结构的初始化。copy_process()函数结束后返回子进程描述符指针(tsk)。</p>
+<p>当do_fork()结束之后，就有了处于可运行状态的完整的子进程。但是它还没有实际运行，调度程序要决定何时把CPU交给这个子进程。在以后的进程切换中，调度程序继续完善子进程：把子进程描述符thread字段的值装入几个CPU寄存器。特别是把thread.esp（即把子进程内核态堆栈的地址）装入esp寄存去，把函数ret_from_fork()的地址装入eip寄存器。ret_from_fork()函数用汇编语言调用schedule_tail()函数，用存放在栈中的值再装载所有的寄存器，并强迫CPU返回到用户态。然后，在fork(),vfork()或clone()系统调用结束时，新进程将开始执行。所以可以看到，子进程真正开始运行是在ret_from_fork()函数之后。</p>
+<h2 id="fork-vfork-exec-函数"><a href="#fork-vfork-exec-函数" class="headerlink" title="fork(),vfork(),exec()函数"></a>fork(),vfork(),exec()函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="keyword">pid_t</span> fork(<span class="keyword">void</span>);</span><br><span class="line"><span class="keyword">pid_t</span> vfork(<span class="keyword">void</span>);</span><br></pre></td></tr></table></figure>
+<p>调用 fork 时，系统将创建一个与当前进程相同的新进程。通常将原有的进程称为父进程，把新创建的进程称为子进程。子进程是父进程的一个拷贝，子进程获得同父进程相同的数据，但是同父进程使用不同的数据段和堆栈段。子进程从父进程继承大多数的属性，但是也修改一些属性.<br>fork 函数的特点是 “调用一次，返回两次”：在父进程中调用一次，在父进程和子进程中各返回一次。在父进程中返回时的返回值为子进程的 PID，而在子进程中返回时的返回值为 0，并且返回后都将执行 fork 函数调用之后的语句。如果 fork 函数调用失败，则返回值为 -1。<br>在子进程中 fork 函数返回 0，那么子进程仍然可以调用 getpid 函数得到自己的 PID，也可以调用 getppid 函数得到父进程 PID。在父进程中用 getpid 函数可以得到自己的 PID，如果想得到子进程的PID，唯一的办法就是把 fork 函数的返回值记录下来。<br>注意：执行 forkdemo 程序时的输出是会发生变化的，可能先打印父进程的信息，也可能先打印子进程的信息。</p>
+<h2 id="vfork-系统调用"><a href="#vfork-系统调用" class="headerlink" title="vfork 系统调用"></a>vfork 系统调用</h2><p>vfork 系统调用和 fork 系统调用的功能基本相同。<strong>vfork 系统调用创建的进程共享其父进程的内存地址空间，但是并不完全复制父进程的数据段，而是和父进程共享其数据段。</strong>为了防止父进程重写子进程需要的数据，父进程会被 vfork 调用阻塞，直到子进程退出或执行一个新的程序。由于调用 vfork 函数时父进程被挂起，所以如果我们使用 vfork 函数替换 forkdemo 中的 fork 函数，那么执行程序时输出信息的顺序就不会变化了。<br>使用 vfork 创建的子进程一般会通过 exec 族函数执行新的程序。<br>使用 fork/vfork 创建子进程后执行的是和父进程相同的程序（但有可能执行不同的代码分支），子进程往往需要调用一个 exec 族函数以执行另外一个程序。当进程调用 exec 族函数时，该进程的用户空间代码和数据完全被新程序替换，从新程序的起始处开始执行。调用 exec 族函数并不创建新进程，所以调用 exec 族函数前后该进程的 PID 并不改变。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: true,
+        verify: false,
+        app_id: 'your appId',
+        app_key: 'your appkey',
+        placeholder: 'Please leave your footprints',
+        pageSize: '10',
+        avatar: '',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/'
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
