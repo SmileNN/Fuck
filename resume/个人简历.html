@@ -151,19 +151,77 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://pic21.nipic.com/20120527/2786001_183253936000_2.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >线程ID</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://www.58.com/zp_images/allimg/120526/1_120526094158_1.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Socket</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="gettid与pthread-self"><a href="#gettid与pthread-self" class="headerlink" title="gettid与pthread_self"></a>gettid与pthread_self</h1><p>标签（空格分隔）： 线程</p>
+                <h1 id="个人简历"><a href="#个人简历" class="headerlink" title="个人简历"></a>个人简历</h1><p>标签（空格分隔）： 简历</p>
 <hr>
-<p>Linux的两种方法：<br>gettid获取内核中线程id<br>pthread_self获取posix描述的线程id</p>
-<p>用户手册<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SYNOPSIS</span><br><span class="line">       #include &lt;sys/types.h&gt;</span><br><span class="line">       pid_t gettid(void);</span><br><span class="line">       Note: There is no glibc wrapper for this system call; see NOTES.</span><br><span class="line">DESCRIPTION</span><br><span class="line">       gettid()  returns the caller&apos;s thread ID (TID).  In a single-threaded process, the thread ID is equal to the process ID (PID, as returned by getpid(2)).  In a multithreaded process, all threads have the same PID, but each one has a unique TID.  For further details, see the discussion of CLONE_THREAD in clone(2).</span><br></pre></td></tr></table></figure></p>
-<p>对于pthread_self<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DESCRIPTION</span><br><span class="line">       The  pthread_self()  function  returns  the ID of the calling thread.  This is the same value that is returned in *thread in the pthread_create(3) call that</span><br><span class="line">       created this thread.</span><br><span class="line">RETURN VALUE</span><br><span class="line">       This function always succeeds, returning the calling thread&apos;s ID.</span><br><span class="line"></span><br><span class="line">he thread ID returned by pthread_self() is not the same thing as the kernel thread ID returned by a call to gettid(2).</span><br></pre></td></tr></table></figure></p>
-<p>用于区分同一进程下不同的线程，一个线程退出后，新的线程可以复用原来的id</p>
-<p>pthread_self 即是获取线程控制块tcb首地址 相对于进程数据的段的偏移， 注：pthread_create也是返回该值。</p>
-<p>总结：<br>gettid 获取的是内核中真实线程ID, 对于多线程进程来说，每个tid实际是不一样的。而pthread_self获取的是相对于进程的线程控制块的首地址， 只是用来描述统一进程中的不同线程，例子中，在线程中调用fork，只会将当前活动线程设置为活动（其他线程终止），且进程使用的都是虚拟地址，所以产生的pthread_self() 是相同的。</p>
+<h2 id="李健"><a href="#李健" class="headerlink" title="李健"></a>李健</h2><p><strong>应聘岗位：后端研发工程师(c/c++)</strong></p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>邮箱： <a href="mailto:1533859940@qq.com" target="_blank" rel="noopener">1533859940@qq.com</a></li>
+<li>手机： 13026347860</li>
+<li>联系地址：武汉理工大学余家头校区</li>
+</ul>
+<h2 id="教育背景"><a href="#教育背景" class="headerlink" title="教育背景"></a>教育背景</h2><table>
+<thead>
+<tr>
+<th>时间</th>
+<th>学校</th>
+<th>专业</th>
+<th>学历</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017.09 - 2019.06</td>
+<td>武汉理工大学</td>
+<td>计算机技术</td>
+<td>硕士研究生</td>
+</tr>
+<tr>
+<td>2013.09 - 2017.06</td>
+<td>武汉理工大学</td>
+<td>物联网工程</td>
+<td>本科</td>
+</tr>
+</tbody>
+</table>
+<h2 id="语言水平"><a href="#语言水平" class="headerlink" title="语言水平"></a>语言水平</h2><table>
+<thead>
+<tr>
+<th>语种</th>
+<th>考试</th>
+<th>分数</th>
+<th>熟练程度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>英语</td>
+<td>cet-6</td>
+<td>455</td>
+<td>熟练</td>
+</tr>
+</tbody>
+</table>
+<h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><p>2017.7.4-2017.9.1<br>心理测评系统开发<br>ObjectC<br>负责：<br>    我主要负责开发心理测评系统iOS客户端。<br>功能包括获取题库，答题，心理测评算法，论坛，个人信息管理等。<br>整个APP采用MVC架构，其中<br>M层负责获取服务器试题数据以及对答题数据进行处理，包括心理测评算法的实现，数据解析。此外，考虑到该系统C/S交互的实时性要求并不高，，数据量不大，因此使用开发效率更高的HTTP请求方式。并提供给C层数据接口<br>V层实现控件布局，由.xib文件完成<br>C层同步使用delegate方式<br>为了易于扩展，M层不同的数据处理都封装为不同的接口。</p>
+<p>2018.4.1-2018.5.4<br>echoserver<br>C++<br>个人项目：基于linux下I/O复用方式epoll实现高并的TCPserver，并通过echo功能进行测试，并且获得了与通用开源网络库libevent几乎相当的并发性能，单机并发量达到100000级别。<br><a href="https://github.com/SmileNN/echoserver" target="_blank" rel="noopener">源码</a></p>
+<p>2018.7.20至今<br>坦克大战对战版<br>C++<br>实现一款可以进行实时对战的坦克大战游戏，客户端基于windows系统、C++11和EasyX图形库实现，并期望使用UDP协议与服务器连接，目前通信部分正在进行中。<br><a href="https://github.com/SmileNN/TankWar" target="_blank" rel="noopener">源码</a></p>
+<h2 id="个人技能"><a href="#个人技能" class="headerlink" title="个人技能"></a>个人技能</h2><ul>
+<li>编程语言    C/C++</li>
+<li>计算机基础    熟悉数据结构，了解MySQL，计算机网络，操作系统，socket编程</li>
+<li>其他  熟悉vs2017，windows，了解Linux基本操作</li>
+</ul>
+<h2 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h2><ul>
+<li>善于分析和解决问题。逻辑清晰，实践能力强，善于沟通交流</li>
+<li>对工作有强烈的专注度和责任心</li>
+<li>爱好骑行，喜欢格斗类游戏，喜欢钻研。</li>
+<li>2017.9获得武汉理工大学研究生学业奖学金 </li>
+<li>个人项目：TankWar，高并发echoserver</li>
+<li><a href="https://smilenn.github.io/" target="_blank" rel="noopener">个人技术博客地址</a></li>
+</ul>
 
             </div>
 
